@@ -1,0 +1,42 @@
+.main-container{
+    text-align: center;
+    background-color: white;
+    padding-top: 20px;
+    
+}
+.img-container{
+    margin: 20px 20px 20px;
+    background-color: #F2F2F2;
+}
+
+.name-container{
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.description-container{
+    color: (rgb(49,54,61));
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.price-container{
+color:rgb(241,78,62);
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.cart-container{
+    color: white;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(40,200,164);
+    height: 50px;
+    font-weight: 600;
+    padding: 20px;
+  
+}
