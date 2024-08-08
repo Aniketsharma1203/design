@@ -1,21 +1,25 @@
 import React, { useState } from "react";
 import Design from "./Design.jsx";
-import "../styles/Home.css";
+import "../styles/Task2.css";
 import Watch from "../utils/watch.png";
 import Shoes from "../utils/shoes.png";
 import Shirt from "../utils/shirts.png";
+import Toy from "../utils/toy.png";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
-export const Home = () => {
+export const Task2 = () => {
   const [state, setState] = useState(0);
+  const [state2, setState2] = useState(1);
 
   const handleNext = () => {
     setState((prev) => (prev + 1) % products.length);
+    setState2((prev) => (prev + 1) % products.length);
   };
 
   const handlePrev = () => {
     setState((prev) => (prev - 1 + products.length) % products.length);
+    setState2((prev) => (prev - 1 + products.length) % products.length);
   };
 
   const products = [
@@ -61,6 +65,20 @@ export const Home = () => {
       rating: 2,
       bgColor: "#52798A",
     },
+    {
+      img: Toy,
+      name: "TOY STORY",
+      description: (
+        <>
+          <span> An object for the child to play with.</span>
+          <br />
+          <span>Perfect for playing, under age 3.</span>
+        </>
+      ),
+      price: 10,
+      rating: 2,
+      bgColor: "#3C9911",
+    },
   ];
 
   return (
@@ -78,6 +96,16 @@ export const Home = () => {
           price={products[state].price}
           rating={products[state].rating}
           bgColor={products[state].bgColor}
+        />
+      </div>
+      <div className="template">
+        <Design
+          img={products[state2].img}
+          name={products[state2].name}
+          description={products[state2].description}
+          price={products[state2].price}
+          rating={products[state2].rating}
+          bgColor={products[state2].bgColor}
         />
       </div>
       <div className="sec-button">

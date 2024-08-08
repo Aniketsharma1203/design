@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/Design.css";
 import { IoIosStar } from "react-icons/io";
 const Design = ({ img, name, description, price, rating, bgColor }) => {
-  const [ratingg, setRating] = useState(rating);
+  
 
   return (
     <>
@@ -25,7 +25,7 @@ const Design = ({ img, name, description, price, rating, bgColor }) => {
             return (
               <>
                 <IoIosStar
-                  color={currentrate <= ratingg ? "rgb(252,175,65)" : "grey"}
+                  color={currentrate <= rating ? "rgb(252,175,65)" : "grey"}
                 />
               </>
             );

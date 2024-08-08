@@ -1,23 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Design from "./Design.jsx";
-import "../styles/Home.css";
+import "../styles/Task4.css";
 import Watch from "../utils/watch.png";
 import Shoes from "../utils/shoes.png";
 import Shirt from "../utils/shirts.png";
+import Toy from "../utils/toy.png";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
-export const Home = () => {
+export const Task4 = () => {
   const [state, setState] = useState(0);
+  const [state2, setState2] = useState(1);
+  const [state3, setState3] = useState(2);
 
   const handleNext = () => {
     setState((prev) => (prev + 1) % products.length);
+    setState2((prev) => (prev + 1) % products.length);
+    setState3((prev) => (prev + 1) % products.length);
   };
 
   const handlePrev = () => {
     setState((prev) => (prev - 1 + products.length) % products.length);
+    setState2((prev) => (prev - 1 + products.length) % products.length);
+    setState3((prev) => (prev - 1 + products.length) % products.length);
   };
-
+  useEffect(() => {
+    setTimeout(() => setState((prev) => (prev + 1) % products.length), 3000);
+    setTimeout(() => setState2((prev) => (prev + 1) % products.length), 3000);
+    setTimeout(() => setState3((prev) => (prev + 1) % products.length), 3000);
+  });
   const products = [
     {
       img: Watch,
@@ -61,6 +72,20 @@ export const Home = () => {
       rating: 2,
       bgColor: "#52798A",
     },
+    {
+      img: Toy,
+      name: "TOY STORY",
+      description: (
+        <>
+          <span> An object for the child to play with.</span>
+          <br />
+          <span>Perfect for playing, under age 3.</span>
+        </>
+      ),
+      price: 10,
+      rating: 2,
+      bgColor: "#3C9911",
+    },
   ];
 
   return (
@@ -78,6 +103,26 @@ export const Home = () => {
           price={products[state].price}
           rating={products[state].rating}
           bgColor={products[state].bgColor}
+        />
+      </div>
+      <div className="template">
+        <Design
+          img={products[state2].img}
+          name={products[state2].name}
+          description={products[state2].description}
+          price={products[state2].price}
+          rating={products[state2].rating}
+          bgColor={products[state2].bgColor}
+        />
+      </div>
+      <div className="template">
+        <Design
+          img={products[state3].img}
+          name={products[state3].name}
+          description={products[state3].description}
+          price={products[state3].price}
+          rating={products[state3].rating}
+          bgColor={products[state3].bgColor}
         />
       </div>
       <div className="sec-button">
